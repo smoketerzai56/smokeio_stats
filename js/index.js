@@ -8,6 +8,7 @@ for (var graph_num = 0 ; graph_num < 2; graph_num++)
 {
   var graph_div = document.createElement("div");
   graph_div.id = "graph-" + graph_num;
+  graph_div.setAttribute('class', 'content');
   document.body.appendChild(graph_div);
 
   console.log(graph_div.id);
@@ -33,16 +34,22 @@ for (var graph_num = 0 ; graph_num < 2; graph_num++)
 
     var layout = {
       barmode: 'bar',
-      title: 'Weekly New Signup user',
+      title: 'Smoke.io | Weekly New Signup user',
       width: 740,
       legend: {"orientation": "h"},
     };
     var data = [trace1]
 
   } else {
+    var total = unpack(rows, 'total_user')
+    console.log('total',total)
+    var text = total.map(String)
     var trace1 = {
       type: 'bar',
       name: 'New user',
+      text: text,
+      textposition: 'auto',
+      hoverinfo: 'none',
       x: unpack(rows, 'Week'),
       y: unpack(rows, 'new_user'),
       marker: {
@@ -65,7 +72,7 @@ for (var graph_num = 0 ; graph_num < 2; graph_num++)
 
     var layout = {
       barmode: 'stack',
-      title: 'Weekly Growth Signup user',
+      title: 'Smoke.io | Weekly Growth Signup user',
       width: 740,
       legend: {"orientation": "h"},
     };
