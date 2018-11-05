@@ -1,4 +1,4 @@
-Plotly.d3.csv("https://raw.githubusercontent.com/terzai/smoke_stat/master/stats.csv", function(err, rows){
+Plotly.d3.csv("https://raw.githubusercontent.com/terzai/smokeio_stats/master/user_growth.csv", function(err, rows){
 
   function unpack(rows, key) {
   return rows.map(function(row) { return row[key]; });
