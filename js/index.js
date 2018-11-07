@@ -131,7 +131,7 @@ var layout = {
   plot_bgcolor: '#93CB56',
   paper_bgcolor: '#93CB56',
   barmode: 'bar',
-  title: 'Smoke.io | LAST 14 DAYS SIGNUP USERS',
+  title: 'SMOKE.IO | LAST 14 DAYS SIGNUP USERS',
   width: 740,
   legend: {"orientation": "h"},
   yaxis: {
