@@ -23,20 +23,26 @@ for (var graph_num = 0 ; graph_num < 2; graph_num++)
         type: 'bar',
         name: 'new_signup',
         text: text,
-        textposition: 'auto',
+        textposition: 'outside',
+        textfont: {color: '#FFFFFF'},
         hoverinfo: 'none',
         x: x,
         y: y,
         marker: {
-          color: 'rgb(4,195,0)',
+          color: '#FFFFFF',
         },
       };
 
       var layout = {
+        paper_bgcolor: '#93CB56',
+        plot_bgcolor: '#93CB56',
         barmode: 'bar',
-        title: 'Smoke.io | Weekly New Signup user',
+        title: 'SMOKE.IO WEEKLY USER SIGNUPS',
+        titlefont:{color: '#FFFFFF'},
         width: 740,
         legend: {"orientation": "h"},
+        yaxis: {color: '#FFFFFF'},
+        xaxis: {color: '#FFFFFF'},
       };
       var data = [trace1]
       break
@@ -49,12 +55,13 @@ for (var graph_num = 0 ; graph_num < 2; graph_num++)
         type: 'bar',
         name: 'New user',
         text: text,
-        textposition: 'auto',
+        textposition: 'outside',
+        textfont: {color: '#FFFFFF'},
         hoverinfo: 'none',
         x: unpack(rows, 'Week'),
         y: unpack(rows, 'new_user'),
         marker: {
-          color: 'rgb(4,195,0)'
+          color: '#FFFFFF'
         },
       }
 
@@ -64,16 +71,21 @@ for (var graph_num = 0 ; graph_num < 2; graph_num++)
         x: unpack(rows, 'Week'),
         y: unpack(rows, 'old_user'),
         marker: {
-          color: 'rgb(89,170,68)'
+          color: '#ECECEC'
         },
       }
       var data = [trace2,trace1];
 
       var layout = {
+        titlefont:{color: '#FFFFFF'},
+        paper_bgcolor: '#93CB56',
+        plot_bgcolor: '#93CB56',
         barmode: 'stack',
-        title: 'Smoke.io | Weekly Growth Signup user',
+        title: 'SMOKE.IO WEEKLY TOTAL USER SIGNUPS',
         width: 740,
         legend: {"orientation": "h"},
+        yaxis: {color: '#FFFFFF'},
+        xaxis: {color: '#FFFFFF'},
       };
   }
 
@@ -98,26 +110,37 @@ console.log(graph_div.id);
 
 var x = unpack(rows, 'day')
 var y = unpack(rows, 'new_user')
-var text = y.map(String)
+
 var trace1 =
 {
-  mode: 'lines+markers+text',
+  type: 'scatter',
+  mode: 'lines',
   name: 'new_signup',
-  text: text,
-  textposition: 'top',
   hoverinfo: 'none',
   x: x,
   y: y,
-  marker: {
-    color: 'rgb(4,195,0)',
-  },
+  line: {
+    shape: 'spline',
+    smoothing: 1.3,
+    color: '#FFFFFF',
+  }
 };
 
 var layout = {
+  titlefont:{color: '#FFFFFF'},
+  plot_bgcolor: '#93CB56',
+  paper_bgcolor: '#93CB56',
   barmode: 'bar',
-  title: 'Smoke.io | Last 7 days Signup user',
+  title: 'Smoke.io | LAST 14 DAYS SIGNUP USERS',
   width: 740,
   legend: {"orientation": "h"},
+  yaxis: {
+    color: '#FFFFFF',
+  },
+  xaxis: {
+    tickangle: '60',
+    color: '#FFFFFF',
+  },
 };
 var data = [trace1]
 
