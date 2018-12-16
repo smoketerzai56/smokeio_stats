@@ -1,5 +1,5 @@
-Month;new_user;old_user;total_user
-September;1166;0;1166
-October;1351;1166;2517
-November;2666;2517;5183
-December;270;5183;5453
+Month,new_user,old_user,total_user
+September,1166,0,1166
+October,1351,1166,2517
+November,2666,2517,5183
+December,270,5183,5453
