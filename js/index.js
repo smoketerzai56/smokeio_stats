@@ -150,3 +150,64 @@ console.log(data);
 Plotly.newPlot(graph_div, data, layout);
 
 })
+
+Plotly.d3.csv("https://raw.githubusercontent.com/terzai/smokeio_stats/master/month.csv", function(err, rows){
+
+  function unpack(rows, key) {
+  return rows.map(function(row) { return row[key]; });
+}
+
+var graph_div = document.createElement("div");
+graph_div.id = "graph-4";
+graph_div.setAttribute('class', 'content');
+document.body.appendChild(graph_div);
+
+console.log(graph_div.id);
+
+
+var total = unpack(rows, 'total_user')
+console.log('total',total)
+var text = total.map(String)
+
+var trace1 = {
+  type: 'bar',
+  name: 'New user',
+  text: text,
+  textposition: 'outside',
+  textfont: {color: '#FFFFFF'},
+  hoverinfo: 'none',
+  x: unpack(rows, 'Month'),
+  y: unpack(rows, 'new_user'),
+  marker: {
+    color: '#FFFFFF'
+  },
+}
+
+var trace2 = {
+  type: 'bar',
+  name: 'Older user',
+  x: unpack(rows, 'Month'),
+  y: unpack(rows, 'old_user'),
+  marker: {
+    color: '#ECECEC'
+  },
+}
+var data = [trace2,trace1];
+
+var layout = {
+  titlefont:{color: '#FFFFFF'},
+  paper_bgcolor: '#93CB56',
+  plot_bgcolor: '#93CB56',
+  barmode: 'stack',
+  title: 'SMOKE.IO Monthly TOTAL USER SIGNUPS',
+  width: 740,
+  legend: {"orientation": "h"},
+  yaxis: {color: '#FFFFFF'},
+  xaxis: {color: '#FFFFFF'},
+};
+
+console.log(data);
+
+Plotly.newPlot(graph_div, data, layout);
+
+})
