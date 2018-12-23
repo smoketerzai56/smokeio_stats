@@ -1,5 +1,6 @@
 Month,new_user,old_user,total_user
-September,1166,0,1166
-October,1351,1166,2517
-November,2666,2517,5183
-December,387,5183,5570
+September,1144,0,1144
+October,1351,1144,2495
+November,2666,2495,5161
+December,385,5161,5546
+
