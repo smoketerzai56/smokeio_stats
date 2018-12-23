@@ -1,4 +1,4 @@
-Month,new_user,old_user,total_user
+"Month","new_user","old_user","total_user"
 September,1144,0,1144
 October,1351,1144,2495
 November,2666,2495,5161
