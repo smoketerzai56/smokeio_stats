@@ -225,8 +225,9 @@ document.body.appendChild(graph_div);
 //console.log(graph_div.id);
 
 var x = unpack(rows, 'date')
-x = x.slice(-15)
+x = x.slice(-30)
 var y = unpack(rows, 'new_user')
+y = y.slice(-30)
 
 var trace1 =
 {
@@ -248,7 +249,7 @@ var layout = {
   plot_bgcolor: '#93CB56',
   paper_bgcolor: '#93CB56',
   barmode: 'bar',
-  title: 'SMOKE.IO | Daily Signups Users Last 15 days',
+  title: 'SMOKE.IO | Daily Signups Users Last 3o days',
   width: 740,
   showlegend: true,
   legend: {
