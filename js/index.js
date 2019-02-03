@@ -58,7 +58,7 @@ for (var graph_num = 0 ; graph_num < 2; graph_num++)
         textposition: 'outside',
         textfont: {color: '#FFFFFF'},
         hoverinfo: 'none',
-        x: unpack(rows, 'Week'),
+        x: unpack(rows, 'week'),
         y: unpack(rows, 'new_user'),
         marker: {
           color: '#FFFFFF'
@@ -83,7 +83,11 @@ for (var graph_num = 0 ; graph_num < 2; graph_num++)
         barmode: 'stack',
         title: 'SMOKE.IO WEEKLY TOTAL USER SIGNUPS',
         width: 740,
-        legend: {"orientation": "h"},
+        showlegend: true,
+        legend: {
+          x: 1,
+          y: 0.5
+        },
         yaxis: {color: '#FFFFFF'},
         xaxis: {color: '#FFFFFF'},
       };
@@ -201,7 +205,11 @@ var layout = {
   barmode: 'stack',
   title: 'SMOKE.IO Monthly TOTAL USER SIGNUPS',
   width: 740,
-  legend: {"orientation": "h"},
+  showlegend: true,
+  legend: {
+    x: 1,
+    y: 0.5
+  },
   yaxis: {color: '#FFFFFF'},
   xaxis: {color: '#FFFFFF'},
 };

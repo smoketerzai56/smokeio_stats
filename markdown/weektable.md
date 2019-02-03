@@ -19,4 +19,4 @@
 |<center>Week 17</center>|<center>Range 2019-01-13 - 2019-01-19</center>|<center>75</center>|<center>5729</center>|<center>5804</center>| 
 |<center>Week 18</center>|<center>Range 2019-01-20 - 2019-01-26</center>|<center>85</center>|<center>5804</center>|<center>5889</center>| 
 |<center>Week 19</center>|<center>Range 2019-01-27 - 2019-02-02</center>|<center>79</center>|<center>5889</center>|<center>5968</center>| 
-|<center>Week 20</center>|<center>Range 2019-02-03 - 2019-02-09</center>|<center>1</center>|<center>5968</center>|<center>5969</center>| 
+|<center>Week 20</center>|<center>Range 2019-02-03 - 2019-02-09</center>|<center>2</center>|<center>5968</center>|<center>5970</center>| 
