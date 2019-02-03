@@ -1,4 +1,4 @@
-Plotly.d3.csv("https://raw.githubusercontent.com/terzai/smokeio_stats/master/user_growth.csv", function(err, rows){
+Plotly.d3.csv("https://raw.githubusercontent.com/terzai/smokeio_stats/master/weekly_signup.csv", function(err, rows){
 
   function unpack(rows, key) {
   return rows.map(function(row) { return row[key]; });
@@ -11,11 +11,11 @@ for (var graph_num = 0 ; graph_num < 2; graph_num++)
   graph_div.setAttribute('class', 'content');
   document.body.appendChild(graph_div);
 
-  console.log(graph_div.id);
+  //console.log(graph_div.id);
 
   switch(graph_num){
     case 0:
-      var x = unpack(rows, 'Week')
+      var x = unpack(rows, 'week')
       var y = unpack(rows, 'new_user')
       var text = y.map(String)
       var trace1 =
@@ -49,7 +49,7 @@ for (var graph_num = 0 ; graph_num < 2; graph_num++)
 
     case 1:
       var total = unpack(rows, 'total_user')
-      console.log('total',total)
+      //console.log('total',total)
       var text = total.map(String)
       var trace1 = {
         type: 'bar',
@@ -68,7 +68,7 @@ for (var graph_num = 0 ; graph_num < 2; graph_num++)
       var trace2 = {
         type: 'bar',
         name: 'Older user',
-        x: unpack(rows, 'Week'),
+        x: unpack(rows, 'week'),
         y: unpack(rows, 'old_user'),
         marker: {
           color: '#ECECEC'
@@ -89,13 +89,13 @@ for (var graph_num = 0 ; graph_num < 2; graph_num++)
       };
   }
 
-  console.log(data);
+  //console.log(data);
 
   Plotly.newPlot(graph_div, data, layout);
 }
 })
 
-Plotly.d3.csv("https://raw.githubusercontent.com/terzai/smokeio_stats/master/current_week.csv", function(err, rows){
+Plotly.d3.csv("https://raw.githubusercontent.com/terzai/smokeio_stats/master/daily_signup.csv", function(err, rows){
 
   function unpack(rows, key) {
   return rows.map(function(row) { return row[key]; });
@@ -106,9 +106,9 @@ graph_div.id = "graph-3";
 graph_div.setAttribute('class', 'content');
 document.body.appendChild(graph_div);
 
-console.log(graph_div.id);
+//console.log(graph_div.id);
 
-var x = unpack(rows, 'day')
+var x = unpack(rows, 'date')
 var y = unpack(rows, 'new_user')
 
 var trace1 =
@@ -145,13 +145,13 @@ var layout = {
 var data = [trace1]
 
 
-console.log(data);
+//console.log(data);
 
 Plotly.newPlot(graph_div, data, layout);
 
 })
 
-Plotly.d3.csv("https://raw.githubusercontent.com/terzai/smokeio_stats/master/month.csv", function(err, rows){
+Plotly.d3.csv("https://raw.githubusercontent.com/terzai/smokeio_stats/master/monthly_signup.csv", function(err, rows){
 
   function unpack(rows, key) {
   return rows.map(function(row) { return row[key]; });
@@ -162,11 +162,11 @@ graph_div.id = "graph-4";
 graph_div.setAttribute('class', 'content');
 document.body.appendChild(graph_div);
 
-console.log(graph_div.id);
+//console.log(graph_div.id);
 
 
 var total = unpack(rows, 'total_user')
-console.log('total',total)
+//console.log('total',total)
 var text = total.map(String)
 
 var trace1 = {
@@ -176,7 +176,7 @@ var trace1 = {
   textposition: 'outside',
   textfont: {color: '#FFFFFF'},
   hoverinfo: 'none',
-  x: unpack(rows, 'Month'),
+  x: unpack(rows, 'month'),
   y: unpack(rows, 'new_user'),
   marker: {
     color: '#FFFFFF'
@@ -186,7 +186,7 @@ var trace1 = {
 var trace2 = {
   type: 'bar',
   name: 'Older user',
-  x: unpack(rows, 'Month'),
+  x: unpack(rows, 'month'),
   y: unpack(rows, 'old_user'),
   marker: {
     color: '#ECECEC'
@@ -206,7 +206,7 @@ var layout = {
   xaxis: {color: '#FFFFFF'},
 };
 
-console.log(data);
+//console.log(data);
 
 Plotly.newPlot(graph_div, data, layout);
 
