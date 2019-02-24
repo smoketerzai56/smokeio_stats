@@ -24,29 +24,31 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
         name: 'new_signup',
         text: text,
         textposition: 'outside',
-        textfont: {color: '#FFFFFF'},
+        textfont: {color: '#afdc2f'},
         hoverinfo: 'none',
         x: x,
         y: y,
         marker: {
-          color: '#FFFFFF',
+          color: '#afdc2f',
         },
       };
 
       var layout = {
-        paper_bgcolor: '#93CB56',
-        plot_bgcolor: '#93CB56',
+        paper_bgcolor: '#F5F5F5',
+        plot_bgcolor: '#F5F5F5',
         barmode: 'bar',
         title: 'SMOKE.IO weekly User Signups',
-        titlefont:{color: '#FFFFFF'},
+        titlefont:{color: '#afdc2f'},
         width: 740,
         showlegend: true,
         legend: {
           x: 1,
           y: 0.5
         },
-        yaxis: {color: '#FFFFFF'},
-        xaxis: {color: '#FFFFFF'},
+        yaxis: {color: '#696969'},
+        xaxis: {
+          tickangle: '-60',
+          color: '#696969'},
       };
       var data = [trace1]
       break
@@ -73,26 +75,28 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
             x: x,
             y: y,
             marker: {
-              color: '#FFFFFF',
+              color: '#afdc2f',
             },
           };
 
 
 
           var layout = {
-            paper_bgcolor: '#93CB56',
-            plot_bgcolor: '#93CB56',
+            paper_bgcolor: '#F5F5F5',
+            plot_bgcolor: '#F5F5F5',
             barmode: 'bar',
             title: 'SMOKE.IO | weekly User Signups Last 8 weeks',
-            titlefont:{color: '#FFFFFF'},
+            titlefont:{color: '#afdc2f'},
             width: 740,
             showlegend: true,
             legend: {
               x: 1,
               y: 0.5
             },
-            yaxis: {color: '#FFFFFF'},
-            xaxis: {color: '#FFFFFF'},
+            yaxis: {color: '#696969'},
+            xaxis: {
+              tickangle: '-60',
+              color: '#696969'},
           };
           var data = [trace1]
           break
@@ -111,7 +115,7 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
         x: unpack(rows, 'week'),
         y: unpack(rows, 'new_user'),
         marker: {
-          color: '#FFFFFF'
+          color: '#afdc2f'
         },
       }
 
@@ -121,15 +125,15 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
         x: unpack(rows, 'week'),
         y: unpack(rows, 'old_user'),
         marker: {
-          color: '#ECECEC'
+          color: '#20998a'
         },
       }
 
 
       var layout = {
-        titlefont:{color: '#FFFFFF'},
-        paper_bgcolor: '#93CB56',
-        plot_bgcolor: '#93CB56',
+        titlefont:{color: '#afdc2f'},
+        paper_bgcolor: '#F5F5F5',
+        plot_bgcolor: '#F5F5F5',
         barmode: 'stack',
         title: 'SMOKE.IO | weekly Total User Signup',
         width: 740,
@@ -138,8 +142,10 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
           x: 1,
           y: 0.5
         },
-        yaxis: {color: '#FFFFFF'},
-        xaxis: {color: '#FFFFFF'},
+        yaxis: {color: '#696969'},
+        xaxis: {
+          tickangle: '-60',
+          color: '#696969'},
       }
 
       var data = [trace2,trace1];
@@ -164,12 +170,12 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
           name: 'New user',
           text: text,
           textposition: 'outside',
-          textfont: {color: '#FFFFFF'},
+          textfont: {color: '#afdc2f'},
           hoverinfo: 'none',
           x: x,
           y: y,
           marker: {
-            color: '#FFFFFF'
+            color: '#afdc2f'
           },
         }
 
@@ -179,15 +185,15 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
           x: x,
           y: y_old_user,
           marker: {
-            color: '#ECECEC'
+            color: '#20998a'
           },
         }
 
 
         var layout = {
-          titlefont:{color: '#FFFFFF'},
-          paper_bgcolor: '#93CB56',
-          plot_bgcolor: '#93CB56',
+          titlefont:{color: '#afdc2f'},
+          paper_bgcolor: '#F5F5F5',
+          plot_bgcolor: '#F5F5F5',
           barmode: 'stack',
           title: 'SMOKE.IO | weekly Total User Signup Last 8 weeks',
           width: 740,
@@ -196,8 +202,10 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
             x: 1,
             y: 0.5
           },
-          yaxis: {color: '#FFFFFF'},
-          xaxis: {color: '#FFFFFF'},
+          yaxis: {color: '#696969'},
+          xaxis: {
+            tickangle: '-60',
+            color: '#696969'},
         }
 
         var data = [trace2,trace1];
@@ -207,7 +215,7 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
   //console.log(data);
 
   Plotly.newPlot(graph_div, data, layout);
-  //Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO | weekly Total User Signup'});
+  Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO | weekly Total User Signup'});
 }
 })
 
@@ -240,14 +248,14 @@ var trace1 =
   line: {
     shape: 'spline',
     smoothing: 1.3,
-    color: '#FFFFFF',
+    color: '#afdc2f',
   }
 };
 
 var layout = {
-  titlefont:{color: '#FFFFFF'},
-  plot_bgcolor: '#93CB56',
-  paper_bgcolor: '#93CB56',
+  titlefont:{color: '#afdc2f'},
+  paper_bgcolor: '#F5F5F5',
+  plot_bgcolor: '#F5F5F5',
   barmode: 'bar',
   title: 'SMOKE.IO | Daily Signups Users Last 3o days',
   width: 740,
@@ -257,11 +265,11 @@ var layout = {
     y: 0.5
   },
   yaxis: {
-    color: '#FFFFFF',
+    color: '#696969',
   },
   xaxis: {
-    tickangle: '60',
-    color: '#FFFFFF',
+    tickangle: '-60',
+    color: '#696969',
   },
 };
 var data = [trace1]
@@ -270,7 +278,7 @@ var data = [trace1]
 //console.log(data);
 
 Plotly.newPlot(graph_div, data, layout);
-//Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily Signups Users'});
+Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily Signups Users'});
 
 })
 
@@ -329,7 +337,7 @@ var data = [trace1]
 //console.log(data);
 
 Plotly.newPlot(graph_div, data, layout);
-//Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily Signups Users Last 30 Days'});
+Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily Signups Users Last 30 Days'});
 
 })
 
@@ -412,8 +420,8 @@ var layout = {
   title: 'SMOKE.IO Accounts',
   width: 740,
   legend: {"orientation": "h"},
-  yaxis: {color: '#FFFFFF'},
-  xaxis: {color: '#FFFFFF'},
+  yaxis: {color: '#696969'},
+  xaxis: {color: '#696969'},
 };
 break
 
@@ -477,8 +485,8 @@ barmode: 'stack',
 title: 'SMOKE.IO Smoke Economy',
 width: 740,
 legend: {"orientation": "h"},
-yaxis: {color: '#FFFFFF'},
-xaxis: {color: '#FFFFFF'},
+yaxis: {color: '#696969'},
+xaxis: {color: '#696969'},
 };
 break
 
@@ -542,14 +550,14 @@ barmode: 'stack',
 title: 'SMOKE.IO Smoke Social',
 width: 740,
 legend: {"orientation": "h"},
-yaxis: {color: '#FFFFFF'},
-xaxis: {color: '#FFFFFF'},
+yaxis: {color: '#696969'},
+xaxis: {color: '#696969'},
 };
 
 //console.log(data);
 }
 Plotly.newPlot(graph_div, data, layout);
-//Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Smoke Social'});
+Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Smoke Social'});
 }
 })
 
@@ -584,7 +592,7 @@ var trace1 = {
   x: unpack(rows, 'month'),
   y: unpack(rows, 'new_user'),
   marker: {
-    color: '#FFFFFF'
+    color: '#afdc2f'
   },
 }
 
@@ -594,15 +602,15 @@ var trace2 = {
   x: unpack(rows, 'month'),
   y: unpack(rows, 'old_user'),
   marker: {
-    color: '#ECECEC'
+    color: '#20998a'
   },
 }
 var data = [trace2,trace1];
 
 var layout = {
-  titlefont:{color: '#FFFFFF'},
-  paper_bgcolor: '#93CB56',
-  plot_bgcolor: '#93CB56',
+  titlefont:{color: '#afdc2f'},
+  paper_bgcolor: '#F5F5F5',
+  plot_bgcolor: '#F5F5F5',
   barmode: 'stack',
   title: 'SMOKE.IO monthly TOTAL USER SIGNUPS',
   width: 740,
@@ -611,13 +619,15 @@ var layout = {
     x: 1,
     y: 0.5
   },
-  yaxis: {color: '#FFFFFF'},
-  xaxis: {color: '#FFFFFF'},
+  yaxis: {color: '#696969'},
+  xaxis: {
+    tickangle: '-60',
+    color: '#696969'},
 };
 
 //console.log(data);
 
 Plotly.newPlot(graph_div, data, layout);
-//Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO monthly Total User Signups'});
+Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO monthly Total User Signups'});
 
 })

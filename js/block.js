@@ -20,7 +20,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
       {
         type: 'scatter',
         mode: 'lines',
-        name: 'comments',
+        name: 'posts',
         hoverinfo: 'none',
         x: date,
         y: comment,
@@ -35,7 +35,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
       {
         type: 'scatter',
         mode: 'lines',
-        name: 'posts',
+        name: 'comments',
         hoverinfo: 'none',
         x: date,
         y: post,
@@ -59,7 +59,9 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
           y: 0.5
         },
         yaxis: {color: '#696969'},
-        xaxis: {color: '#696969'},
+        xaxis: {
+          tickangle: '-60',
+          color: '#696969'},
       };
       var data = [trace1,trace2]
       break
@@ -115,7 +117,9 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
             y: 0.5
           },
           yaxis: {color: '#696969'},
-          xaxis: {color: '#696969'},
+          xaxis: {
+            tickangle: '-60',
+            color: '#696969'},
         };
         var data = [trace1,trace2]
         break
@@ -152,7 +156,9 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
             y: 0.5
           },
           yaxis: {color: '#696969'},
-          xaxis: {color: '#696969'},
+          xaxis: {
+            tickangle: '-60',
+            color: '#696969'},
         };
           var data = [trace1]
           break
@@ -191,7 +197,9 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
                 y: 0.5
               },
               yaxis: {color: '#696969'},
-              xaxis: {color: '#696969'},
+              xaxis: {
+                tickangle: '-60',
+                color: '#696969'},
             };
             var data = [trace1]
             break
@@ -228,7 +236,9 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
               y: 0.5
             },
             yaxis: {color: '#696969'},
-            xaxis: {color: '#696969'},
+            xaxis: {
+              tickangle: '-60',
+              color: '#696969'},
           };
             var data = [trace1]
             break
@@ -267,7 +277,9 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
                   y: 0.5
                 },
                 yaxis: {color: '#696969'},
-                xaxis: {color: '#696969'},
+                xaxis: {
+                  tickangle: '-60',
+                  color: '#696969'},
               };
               var data = [trace1]
               break
