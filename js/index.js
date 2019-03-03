@@ -215,7 +215,7 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
   //console.log(data);
 
   Plotly.newPlot(graph_div, data, layout);
-  Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO | weekly Total User Signup'});
+  //Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO | weekly Total User Signup'});
 }
 })
 
@@ -278,7 +278,70 @@ var data = [trace1]
 //console.log(data);
 
 Plotly.newPlot(graph_div, data, layout);
-Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily Signups Users'});
+//Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily 30 days Signups Users'});
+
+})
+
+Plotly.d3.csv("https://raw.githubusercontent.com/terzai/smokeio_stats/master/daily_signup.csv", function(err, rows){
+
+  function unpack(rows, key) {
+  return rows.map(function(row) { return row[key]; });
+}
+
+var graph_div = document.createElement("div");
+graph_div.id = "graph-3";
+graph_div.setAttribute('class', 'content');
+document.body.appendChild(graph_div);
+
+//console.log(graph_div.id);
+
+var x = unpack(rows, 'date')
+x = x.slice(-7)
+var y = unpack(rows, 'new_user')
+y = y.slice(-7)
+
+var trace1 =
+{
+  type: 'scatter',
+  mode: 'lines',
+  name: 'new_signup',
+  hoverinfo: 'none',
+  x: x,
+  y: y,
+  line: {
+    shape: 'spline',
+    smoothing: 1.3,
+    color: '#afdc2f',
+  }
+};
+
+var layout = {
+  titlefont:{color: '#afdc2f'},
+  paper_bgcolor: '#F5F5F5',
+  plot_bgcolor: '#F5F5F5',
+  barmode: 'bar',
+  title: 'SMOKE.IO | Daily Signups Users Last 7 days',
+  width: 740,
+  showlegend: true,
+  legend: {
+    x: 1,
+    y: 0.5
+  },
+  yaxis: {
+    color: '#696969',
+  },
+  xaxis: {
+    tickangle: '-60',
+    color: '#696969',
+  },
+};
+var data = [trace1]
+
+
+//console.log(data);
+
+Plotly.newPlot(graph_div, data, layout);
+//Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily 7 days Signups Users'});
 
 })
 
@@ -337,7 +400,7 @@ var data = [trace1]
 //console.log(data);
 
 Plotly.newPlot(graph_div, data, layout);
-Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily Signups Users Last 30 Days'});
+//Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily Signups Users Last 30 Days'});
 
 })
 
@@ -557,7 +620,7 @@ xaxis: {color: '#696969'},
 //console.log(data);
 }
 Plotly.newPlot(graph_div, data, layout);
-Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Smoke Social'});
+//Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Smoke Social'});
 }
 })
 
@@ -628,6 +691,6 @@ var layout = {
 //console.log(data);
 
 Plotly.newPlot(graph_div, data, layout);
-Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO monthly Total User Signups'});
+//Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO monthly Total User Signups'});
 
 })

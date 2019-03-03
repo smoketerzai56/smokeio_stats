@@ -20,10 +20,10 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
       {
         type: 'scatter',
         mode: 'lines',
-        name: 'posts',
+        name: 'comments',
         hoverinfo: 'none',
         x: date,
-        y: comment,
+        y: post,
         line: {
           shape: 'spline',
           smoothing: 1.3,
@@ -35,10 +35,10 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
       {
         type: 'scatter',
         mode: 'lines',
-        name: 'comments',
+        name: 'posts',
         hoverinfo: 'none',
         x: date,
-        y: post,
+        y: comment,
         line: {
           shape: 'spline',
           smoothing: 1.3,
@@ -81,7 +81,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
           name: 'comments',
           hoverinfo: 'none',
           x: date,
-          y: comment,
+          y: post,
           line: {
             shape: 'spline',
             smoothing: 1.3,
@@ -96,7 +96,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
           name: 'posts',
           hoverinfo: 'none',
           x: date,
-          y: post,
+          y: comment,
           line: {
             shape: 'spline',
             smoothing: 1.3,
@@ -288,6 +288,6 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
   //console.log(data);
 
   Plotly.newPlot(graph_div, data, layout);
-  Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO | Transactions'});
+  //Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO | Transactions'});
 }
 })
