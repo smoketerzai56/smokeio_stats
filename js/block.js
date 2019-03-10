@@ -288,6 +288,6 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
   //console.log(data);
 
   Plotly.newPlot(graph_div, data, layout);
-  //Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO | Transactions'});
+  Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO | Transactions'});
 }
 })

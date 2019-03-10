@@ -70,7 +70,7 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
             name: 'new_signup',
             text: text,
             textposition: 'outside',
-            textfont: {color: '#FFFFFF'},
+            textfont: {color: '#afdc2f'},
             hoverinfo: 'none',
             x: x,
             y: y,
@@ -110,7 +110,7 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
         name: 'New user',
         text: text,
         textposition: 'outside',
-        textfont: {color: '#FFFFFF'},
+        textfont: {color: '#afdc2f'},
         hoverinfo: 'none',
         x: unpack(rows, 'week'),
         y: unpack(rows, 'new_user'),
@@ -215,7 +215,7 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
   //console.log(data);
 
   Plotly.newPlot(graph_div, data, layout);
-  //Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO | weekly Total User Signup'});
+  Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO | weekly Total User Signup'});
 }
 })
 
@@ -278,7 +278,7 @@ var data = [trace1]
 //console.log(data);
 
 Plotly.newPlot(graph_div, data, layout);
-//Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily 30 days Signups Users'});
+Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily 30 days Signups Users'});
 
 })
 
@@ -341,7 +341,7 @@ var data = [trace1]
 //console.log(data);
 
 Plotly.newPlot(graph_div, data, layout);
-//Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily 7 days Signups Users'});
+Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily 7 days Signups Users'});
 
 })
 
@@ -400,7 +400,7 @@ var data = [trace1]
 //console.log(data);
 
 Plotly.newPlot(graph_div, data, layout);
-//Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily Signups Users Last 30 Days'});
+Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Daily Signups Users Last 30 Days'});
 
 })
 
@@ -620,7 +620,7 @@ xaxis: {color: '#696969'},
 //console.log(data);
 }
 Plotly.newPlot(graph_div, data, layout);
-//Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Smoke Social'});
+Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO Smoke Social'});
 }
 })
 
@@ -650,7 +650,7 @@ var trace1 = {
   name: 'New user',
   text: text,
   textposition: 'outside',
-  textfont: {color: '#FFFFFF'},
+  textfont: {color: '#afdc2f'},
   hoverinfo: 'none',
   x: unpack(rows, 'month'),
   y: unpack(rows, 'new_user'),
@@ -691,6 +691,6 @@ var layout = {
 //console.log(data);
 
 Plotly.newPlot(graph_div, data, layout);
-//Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO monthly Total User Signups'});
+Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO monthly Total User Signups'});
 
 })
