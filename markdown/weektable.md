@@ -29,4 +29,6 @@
 |<center>Week 27</center>|<center>2019-03-24 - 2019-03-30</center>|<center>57</center>|<center>6470</center>|<center>6527</center>|
 |<center>Week 28</center>|<center>2019-03-31 - 2019-04-06</center>|<center>57</center>|<center>6527</center>|<center>6584</center>|
 |<center>Week 29</center>|<center>2019-04-07 - 2019-04-13</center>|<center>48</center>|<center>6584</center>|<center>6632</center>|
-|<center>Week 30</center>|<center>2019-04-14 - 2019-04-20</center>|<center>59</center>|<center>6632</center>|<center>6691</center>| 
+|<center>Week 30</center>|<center>2019-04-14 - 2019-04-20</center>|<center>59</center>|<center>6632</center>|<center>6691</center>|
+|<center>Week 31</center>|<center>2019-04-21 - 2019-04-27</center>|<center>69</center>|<center>6691</center>|<center>6760</center>|
+|<center>Week 32</center>|<center>2019-04-28 - 2019-05-04</center>|<center>20</center>|<center>6760</center>|<center>6780</center>|
