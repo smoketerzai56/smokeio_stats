@@ -23,7 +23,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
         name: 'comments',
         hoverinfo: 'none',
         x: date,
-        y: post,
+        y: comment,
         line: {
           shape: 'spline',
           smoothing: 1.3,
@@ -38,7 +38,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
         name: 'posts',
         hoverinfo: 'none',
         x: date,
-        y: comment,
+        y: post,
         line: {
           shape: 'spline',
           smoothing: 1.3,
@@ -81,7 +81,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
           name: 'comments',
           hoverinfo: 'none',
           x: date,
-          y: post,
+          y: comment,
           line: {
             shape: 'spline',
             smoothing: 1.3,
@@ -96,7 +96,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
           name: 'posts',
           hoverinfo: 'none',
           x: date,
-          y: comment,
+          y: post,
           line: {
             shape: 'spline',
             smoothing: 1.3,
@@ -132,7 +132,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
           {
             type: 'scatter',
             mode: 'lines',
-            name: 'transactions',
+            name: 'Operations',
             hoverinfo: 'none',
             x: date,
             y: total,
@@ -147,7 +147,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
           paper_bgcolor: '#F5F5F5',
           plot_bgcolor: '#F5F5F5',
           barmode: 'bar',
-          title: 'SMOKE.IO Transactions',
+          title: 'SMOKE.IO Operations',
           titlefont:{color: '#afdc2f'},
           width: 740,
           showlegend: true,
@@ -173,7 +173,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
             {
               type: 'scatter',
               mode: 'lines',
-              name: 'transactions',
+              name: 'operations',
               hoverinfo: 'none',
               x: date,
               y: total,
@@ -188,7 +188,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
               paper_bgcolor: '#F5F5F5',
               plot_bgcolor: '#F5F5F5',
               barmode: 'bar',
-              title: 'SMOKE.IO Transactions (Last 30 Days)',
+              title: 'SMOKE.IO Operations (Last 30 Days)',
               titlefont:{color: '#afdc2f'},
               width: 740,
               showlegend: true,
