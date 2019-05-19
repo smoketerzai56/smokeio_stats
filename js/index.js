@@ -4,7 +4,7 @@ https://raw.githubusercontent.com/smoketerzai56/private/master/active/New%20bloc
   return rows.map(function(row) { return row[key]; });
 }
 
-for (var graph_num = 0 ; graph_num < 3; graph_num++)
+for (var graph_num = 0 ; graph_num < 4; graph_num++)
 {
   var graph_div = document.createElement("div");
   graph_div.id = "graph-" + graph_num;
@@ -162,6 +162,67 @@ for (var graph_num = 0 ; graph_num < 3; graph_num++)
 
         var data = [trace2,trace1];
         break
+
+    case 3:
+
+    var week = unpack(rows, 'week')
+    var new_user = unpack(rows, 'new_user')
+    var old_user = unpack(rows, 'old_user')
+    var total = unpack(rows, 'total_user')
+
+    //console.log('total',total)
+    var text = total.map(String)
+    var trace1 = {
+      type: 'bar',
+      name: 'New Daily Account Creation',
+      text: total,
+      textposition: 'outside',
+      textfont: {color: '#afdc2f'},
+      hoverinfo: 'none',
+      x: week,
+      y: new_user,
+      marker: {
+        color: '#afdc2f'
+      },
+    }
+
+    var trace2 = {
+      type: 'bar',
+      name: 'Previous Daily Account Creation',
+      text: old_user,
+      textposition: 'inside',
+      textfont: {color: '#F5F5F5'},
+      x: week,
+      y: old_user,
+      marker: {
+        color: '#20998a'
+      },
+    }
+
+
+    var layout = {
+      titlefont:{color: '#afdc2f'},
+      paper_bgcolor: '#F5F5F5',
+      plot_bgcolor: '#F5F5F5',
+      barmode: 'stack',
+      title: 'SMOKE.IO | Weekly | Total User Signups | All',
+      width: 740,
+      showlegend: true,
+      legend: {
+        orientation: 'h',
+        x: 0.1,
+        y: 1.1
+      },
+      yaxis: {color: '#696969',
+              range: [0, 7000],
+            },
+      xaxis: {
+        tickangle: '-45',
+        color: '#696969'},
+    }
+
+    var data = [trace2,trace1];
+    break
   }
 
   Plotly.newPlot(graph_div, data, layout);
