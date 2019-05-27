@@ -9,6 +9,29 @@ var post = unpack(rows, 'post');
 var comment = unpack(rows, 'comment');
 var date = unpack(rows,'Row Labels');
 var total = unpack(rows, 'Grand Total');
+var vote = unpack(rows, 'vote')
+
+var x = rows
+
+var l = [];
+var o = {};
+var f = function(x){
+    console.log(x["account_create"]);
+    var dt_object = Date(x["account_create"]); // convert to datetime object
+    console.log(dt_object);
+    var key = dt_object.year + '-' + dt_object.month;
+    console.log(key);
+    if (o[key] === undefined) {
+        o[key] = [];
+        console.log(o[key]);
+    };
+
+    o[key].push(x)
+};
+
+_.map(l, f(x)) //apply f to each member of l
+
+console.log(l)
 
 for (var graph_num = 0 ; graph_num < 6; graph_num++)
 {
@@ -19,9 +42,9 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
   switch(graph_num){
     case 0:
 
-    console.log(comment);
-    console.log(date);
-      var trace1 =
+    //console.log(comment);
+    //console.log(date);
+      var trace2 =
       {
         type: "scatter",
         mode: "lines",
@@ -35,7 +58,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
         },
       };
 
-      var trace2 =
+      var trace1 =
       {
         type: "scatter",
         mode: "lines",
@@ -49,6 +72,20 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
         },
       };
 
+      var trace3 =
+      {
+        type: "scatter",
+        mode: "lines",
+        name: 'smokes',
+        hoverinfo: 'none',
+
+        x: date,
+        y: vote,
+        line: {
+          color: '#FF8C00'
+        },
+      };
+
       var layout = {
         paper_bgcolor: '#F5F5F5',
         plot_bgcolor: '#F5F5F5',
@@ -58,22 +95,26 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
         width: 740,
         showlegend: true,
         legend: {
+          orientation: 'h',
           x: 0.1,
-          y: 1.1
+          y: 1.15
         },
         xaxis: {
           autorange: true,
           range: ['2018-09-23', '2019-05-18'],
-          rangeselector: {buttons: [
+          rangeselector: {
+            x: 0.7,
+            y: 1,
+            buttons: [
               {
                 count: 1,
-                label: '1m',
+                label: '1 Month',
                 step: 'month',
                 stepmode: 'backward'
               },
               {
                 count: 6,
-                label: '6m',
+                label: '6 Months',
                 step: 'month',
                 stepmode: 'backward'
               },
@@ -84,11 +125,10 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
         },
       yaxis: {
         autorange: true,
-        range: [0, 3000],
         type: 'linear'
   }
       };
-      var data = [trace1,trace2]
+      var data = [trace1,trace2,trace3]
       break
 
       case 1:
@@ -218,7 +258,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
             break
 
           case 4:
-            var vote = unpack(rows, 'vote')
+
             var date = unpack(rows,'Row Labels')
 
             var trace1 =
@@ -295,6 +335,6 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
   //console.log(data);
 
   Plotly.newPlot(graph_div, data, layout);
-  //Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO | Transactions'});
+  Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO | Transactions'});
 }
 })
