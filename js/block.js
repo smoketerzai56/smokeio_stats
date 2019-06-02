@@ -10,28 +10,9 @@ var comment = unpack(rows, 'comment');
 var date = unpack(rows,'Row Labels');
 var total = unpack(rows, 'Grand Total');
 var vote = unpack(rows, 'vote')
+var month = unpack(rows, 'month')
 
-var x = rows
 
-var l = [];
-var o = {};
-var f = function(x){
-    console.log(x["account_create"]);
-    var dt_object = Date(x["account_create"]); // convert to datetime object
-    console.log(dt_object);
-    var key = dt_object.year + '-' + dt_object.month;
-    console.log(key);
-    if (o[key] === undefined) {
-        o[key] = [];
-        console.log(o[key]);
-    };
-
-    o[key].push(x)
-};
-
-_.map(l, f(x)) //apply f to each member of l
-
-console.log(l)
 
 for (var graph_num = 0 ; graph_num < 6; graph_num++)
 {
@@ -133,11 +114,11 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
 
       case 1:
         //var post = unpack(rows, 'post')
-        post = post.slice(-30)
+        //post = post.slice(-30)
         //var comment = unpack(rows, 'comment')
-        comment = comment.slice(-30)
+        //comment = comment.slice(-30)
         //var date = unpack(rows,'Row Labels')
-        date = date.slice(-30)
+        //date = date.slice(-30)
 
         var trace1 =
         {
@@ -146,6 +127,13 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
           hoverinfo: 'none',
           x: date,
           y: comment,
+          transforms: [{
+            type: 'aggregate',
+            groups: month,
+            aggregations: [
+              {target: 'y', func: 'sum', enabled: true},
+              ]
+          }],
           marker: {
             color: '#20998a'
           },
@@ -158,6 +146,13 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
           hoverinfo: 'none',
           x: date,
           y: post,
+          transforms: [{
+            type: 'aggregate',
+            groups: month,
+            aggregations: [
+              {target: 'y', func: 'sum', enabled: true},
+              ]
+          }],
           marker: {
             color: '#afdc2f'
           },
