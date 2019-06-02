@@ -1,5 +1,5 @@
 
-Plotly.d3.csv("https://raw.githubusercontent.com/terzai/smokeio_stats/master/blockchain_total.csv", function(err, rows){
+Plotly.d3.csv("https://raw.githubusercontent.com/terzai/smokeio_stats/master/blockchain_total_daily.csv", function(err, rows){
 https://raw.githubusercontent.com/smoketerzai56/private/master/active/New%20blocks/New_Block3400000_all_blocks.csv?token=AsRnUdaYn1x8bz52QqBfWPM5MT_6RSjtks5cUKSrwA%3D%3D
   function unpack(rows, key) {
   return rows.map(function(row) { return row[key]; });
@@ -13,7 +13,13 @@ var vote = unpack(rows, 'vote')
 var month = unpack(rows, 'month')
 
 
+var graph_div = document.createElement("div");
+graph_div.id = "graph-0";
+graph_div.setAttribute('class', 'content');
+document.body.appendChild(graph_div);
 
+
+/*
 for (var graph_num = 0 ; graph_num < 6; graph_num++)
 {
   var graph_div = document.createElement("div");
@@ -22,7 +28,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
   document.body.appendChild(graph_div);
   switch(graph_num){
     case 0:
-
+*/
     //console.log(comment);
     //console.log(date);
       var trace2 =
@@ -110,7 +116,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
   }
       };
       var data = [trace1,trace2,trace3]
-      break
+/*      break
 
       case 1:
         //var post = unpack(rows, 'post')
@@ -325,11 +331,93 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
               };
               var data = [trace1]
               break
-  }
+
+  */
+
 
   //console.log(data);
 
   Plotly.newPlot(graph_div, data, layout);
   Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO | Transactions'});
+
+})
+
+
+
+Plotly.d3.csv("https://raw.githubusercontent.com/terzai/smokeio_stats/master/blockchain_total_weekly.csv", function(err, rows){
+https://raw.githubusercontent.com/smoketerzai56/private/master/active/New%20blocks/New_Block3400000_all_blocks.csv?token=AsRnUdaYn1x8bz52QqBfWPM5MT_6RSjtks5cUKSrwA%3D%3D
+  function unpack(rows, key) {
+  return rows.map(function(row) { return row[key]; });
 }
+
+var post = unpack(rows, 'post');
+var comment = unpack(rows, 'comment');
+var date = unpack(rows,'Row Labels');
+var total = unpack(rows, 'Grand Total');
+var vote = unpack(rows, 'vote')
+var month = unpack(rows, 'month')
+
+
+var graph_div = document.createElement("div");
+graph_div.id = "graph-1";
+graph_div.setAttribute('class', 'content');
+document.body.appendChild(graph_div);
+
+//console.log('total',total)
+//var text = total.map(String)
+var trace1 = {
+  type: 'bar',
+  name: 'Comments',
+  //text: total,
+  textposition: 'outside',
+  textfont: {color: '#afdc2f'},
+  hoverinfo: 'none',
+  x: date,
+  y: comment,
+  marker: {
+    color: '#afdc2f'
+  },
+}
+
+var trace2 = {
+  type: 'bar',
+  name: 'Post',
+  //text: y_old_user,
+  textposition: 'inside',
+  textfont: {color: '#F5F5F5'},
+  x: date,
+  y: post,
+  marker: {
+    color: '#20998a'
+  },
+}
+
+
+var layout = {
+  titlefont:{color: '#afdc2f'},
+  paper_bgcolor: '#F5F5F5',
+  plot_bgcolor: '#F5F5F5',
+  barmode: 'stack',
+  title: 'SMOKE.IO | Weekly | Total User Signups | Last 8 Weeks',
+  width: 740,
+  showlegend: true,
+  legend: {
+    orientation: 'h',
+    x: 0.1,
+    y: 1.1
+  },
+  yaxis: {color: '#696969',
+          //range: [6400, 7500],
+        },
+  xaxis: {
+    tickangle: '-45',
+    color: '#696969'},
+}
+
+var data = [trace2,trace1];
+
+
+Plotly.newPlot(graph_div, data, layout);
+Plotly.downloadImage(graph_div, {format: 'png', width: 798, height: 485, filename: 'SMOKE.IO | Transactions'});
+
 })

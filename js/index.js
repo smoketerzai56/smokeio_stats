@@ -153,7 +153,7 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
             y: 1.1
           },
           yaxis: {color: '#696969',
-                  range: [6200, 7000],
+                  range: [6400, 7500],
                 },
           xaxis: {
             tickangle: '-45',
@@ -402,6 +402,8 @@ var trace1 = {
 var trace2 = {
   type: 'bar',
   name: 'Previous Daily Account Creation',
+  text: unpack(rows, 'old_user'),
+  textposition:'inside',
   x: unpack(rows, 'month'),
   y: unpack(rows, 'old_user'),
   marker: {
@@ -423,7 +425,9 @@ var layout = {
     x: 0.1,
     y: 1.1
   },
-  yaxis: {color: '#696969'},
+  yaxis: {
+    range: [0, 7500],
+    color: '#696969'},
   xaxis: {
     tickangle: '-45',
     color: '#696969'},
