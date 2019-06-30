@@ -88,7 +88,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
         },
         xaxis: {
           autorange: true,
-          range: ['2018-09-23', '2019-05-18'],
+          range: ['2018-09-23', '2019-06-30'],
           rangeselector: {
             x: 0.7,
             y: 1,
@@ -107,7 +107,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
               },
               {step: 'all'}
             ]},
-          rangeslider: {range: ['2018-09-23', '2019-05-18']},
+          rangeslider: {range: ['2018-09-23', '2019-06-30']},
           type: 'date'
         },
       yaxis: {
