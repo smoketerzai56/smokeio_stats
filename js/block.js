@@ -357,7 +357,9 @@ var total = unpack(rows, 'Grand Total');
 var vote = unpack(rows, 'vote')
 var month = unpack(rows, 'month')
 var comment_last8weeks = comment.slice(-8)
+
 var post_last8weeks = post.slice(-8)
+console.log(post);
 var date_last8Weeks = date.slice(-8)
 var total_last8Weeks = total.slice(-8)
 
