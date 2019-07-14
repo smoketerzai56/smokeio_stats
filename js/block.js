@@ -88,7 +88,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
         },
         xaxis: {
           autorange: true,
-          range: ['2018-09-23', '2019-06-30'],
+          range: ['2018-09-23', '2019-07-13'],
           rangeselector: {
             x: 0.7,
             y: 1,
@@ -107,7 +107,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
               },
               {step: 'all'}
             ]},
-          rangeslider: {range: ['2018-09-23', '2019-06-30']},
+          rangeslider: {range: ['2018-09-23', '2019-07-13']},
           type: 'date'
         },
       yaxis: {
@@ -359,7 +359,7 @@ var month = unpack(rows, 'month')
 var comment_last8weeks = comment.slice(-8)
 
 var post_last8weeks = post.slice(-8)
-console.log(post);
+console.log(post_last8weeks);
 var date_last8Weeks = date.slice(-8)
 var total_last8Weeks = total.slice(-8)
 
