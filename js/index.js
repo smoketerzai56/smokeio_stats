@@ -144,7 +144,7 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
           paper_bgcolor: '#F5F5F5',
           plot_bgcolor: '#F5F5F5',
           barmode: 'stack',
-          title: 'SMOKE.IO | Weekly | Total User Signups | Last 8 Weeks',
+            title: 'SMOKE.IO | Weekly | Total User Signups | Last 8 Weeks',
           width: 740,
           showlegend: true,
           legend: {
@@ -153,7 +153,7 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
             y: 1.1
           },
           yaxis: {color: '#696969',
-                  range: [6400, 7500],
+                  range: [6400, 8000],
                 },
           xaxis: {
             tickangle: '-45',
@@ -214,7 +214,7 @@ for (var graph_num = 0 ; graph_num < 4; graph_num++)
         y: 1.1
       },
       yaxis: {color: '#696969',
-              range: [0, 7000],
+              range: [0, 8000],
             },
       xaxis: {
         tickangle: '-45',
@@ -426,7 +426,7 @@ var layout = {
     y: 1.1
   },
   yaxis: {
-    range: [0, 7500],
+    range: [0, 8000],
     color: '#696969'},
   xaxis: {
     tickangle: '-45',
