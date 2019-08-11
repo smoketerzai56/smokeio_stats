@@ -126,6 +126,7 @@ for (var graph_num = 0 ; graph_num < 6; graph_num++)
 })
 
 
+
 Plotly.d3.csv("https://raw.githubusercontent.com/terzai/smokeio_stats/master/blockchain_total_weekly.csv", function(err, rows){
 https://raw.githubusercontent.com/smoketerzai56/private/master/active/New%20blocks/New_Block3400000_all_blocks.csv?token=AsRnUdaYn1x8bz52QqBfWPM5MT_6RSjtks5cUKSrwA%3D%3D
   function unpack(rows, key) {
